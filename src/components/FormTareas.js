@@ -23,6 +23,11 @@ const FormTareas = () => {
         setTareas(arreglo);
         setTarea("");
     }
+    const borrarTarea=(nombreTarea)=>{
+        let ListaTareaModificado=tareas.filter((unaTarea)=>unaTarea !== nombreTarea);
+        console.log(ListaTareaModificado);
+        setTareas(ListaTareaModificado); 
+    }
 
     return (
         <Fragment>
@@ -33,6 +38,7 @@ const FormTareas = () => {
                             type="text"
                             className=" form-control"
                             placeholder="Agregar una tarea"
+                            value={tarea}
                             onChange={(e) => setTarea(e.target.value)}
                         />
                         <button className="btn btn-outline-light" type="submit">Agregar</button>
@@ -41,7 +47,7 @@ const FormTareas = () => {
             </div>
             <section className='container w-50 my-5'>
                 {/*Invoco al componente Listatarea*/}
-                <ListaTarea tareas={tareas} ></ListaTarea>
+                <ListaTarea tareas={tareas} borrarTareaIndividual={borrarTarea} ></ListaTarea>
             </section>
         </Fragment>
     );

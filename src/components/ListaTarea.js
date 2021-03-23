@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import TareaIndividual from "./TareaIndividual";
 
 const ListaTarea = (props) => {
@@ -7,7 +7,7 @@ const ListaTarea = (props) => {
         <div>
             <ul className="list-group">
                 {props.tareas.map((dato, indice) => (
-                    <TareaIndividual nombreTarea={dato} key={indice}></TareaIndividual>
+                    <TareaIndividual nombreTarea={dato} key={indice} borrarTarea={props.borrarTareaIndividual}  ></TareaIndividual>
                 ))}
             </ul>
         </div>
