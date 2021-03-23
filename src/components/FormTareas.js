@@ -21,7 +21,7 @@ const FormTareas = () => {
         arreglo.push(tarea);
 
         setTareas(arreglo);
-
+        setTarea("");
     }
 
     return (
